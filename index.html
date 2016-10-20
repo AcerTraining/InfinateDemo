@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ionic List Directive</title>
+
+    <link href="lib/ionic.css" rel="stylesheet">
+    <script src="lib/ionic.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+<pane ng-controller="MainCtrl">
+    <header-bar title="'Infinite Scroll Example'">
+    </header-bar>
+    <content has-header="true"  padding="true" on-infinite-scroll="addMoreItem">
+        <div class=" list padding">
+            <div ng-repeat="item in items | limitTo:numberOfItemsToDisplay" class="item" type="item-text-wrap">
+                <h3>{{item}}</h3>
+            </div>
+        </div>
+    </content>
+</pane>
+
+</body>
+
+</html>
